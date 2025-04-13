@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font: 10px inherit;
+  user-select: none;
+}
+
+body {
+  margin: 0 auto;
+}
