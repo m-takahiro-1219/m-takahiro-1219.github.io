@@ -1,0 +1,49 @@
+@charset 'utf-8';
+
+@function palettes ($color-name, $tone: base) {
+  @return map-get(map-get($palettes, $color-name), $tone);
+}
+
+$palettes: (
+  white: (
+    base: rgb(255, 255, 255)
+  ),
+  black: (
+    base: rgb(0, 0, 0)
+  ),
+  gray: (
+    light: rgb(191, 191, 191),
+    base: rgb(127, 127, 127),
+    dark: rgb(63, 63, 63)
+  ),
+  red: (
+    light: rgb(255, 63, 63),
+    base: rgb(255, 0, 0),
+    dark: rgb(191, 0, 0)
+  ),
+  yellow: (
+    light: rgb(255, 255, 63),
+    base: rgb(255, 255, 0),
+    dark: rgb(191, 191, 0)
+  ),
+  green: (
+    light: rgb(63, 255, 63),
+    base: rgb(0, 255, 0),
+    dark: rgb(0, 191, 0)
+  ),
+  cyan: (
+    light: rgb(63, 255, 255),
+    base: rgb(0, 255, 255),
+    dark: rgb(0, 191, 191)
+  ),
+  blue: (
+    light: rgb(63, 63, 255),
+    base: rgb(0, 0, 255),
+    dark: rgb(0, 0, 191)
+  ),
+  magenta: (
+    light: rgb(255, 63, 255),
+    base: rgb(255, 0, 255),
+    dark: rgb(191, 0, 191)
+  )
+);

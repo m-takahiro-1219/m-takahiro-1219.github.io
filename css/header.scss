@@ -1,0 +1,32 @@
+@charset 'utf-8';
+
+@import 'colors';
+@import 'values';
+
+#header {
+  #header__title {
+    background: palettes(gray);
+    height: 5rem;
+  }
+  #search-form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 4rem;
+    margin: 1rem;
+    #search-form__input {
+      border: solid $border-width palettes(gray);
+      border-radius: $border-radius;
+      font: inherit;
+      padding: 0.5rem;
+    }
+    #search-form__button {
+      background: palettes(gray);
+      border: 0;
+      border-radius: $border-radius;
+      color: palettes(white);
+      cursor: pointer;
+      font: inherit;
+      padding: 0.5rem;
+    }
+  }
+}
