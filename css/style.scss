@@ -17,12 +17,19 @@
 
 html {
   color: palettes(gray, dark);
-  font-size: 20px;
+  @include media-query (sp) {
+    font-size: 10px;
+  }
+  @include media-query (tab) {
+    font-size: 15px;
+  }
+  @include media-query (pc) {
+    font-size: 20px;
+  }
 }
 
 body {
   margin: 0 auto;
-  max-width: 40rem;
   width: 100%;
 }
 

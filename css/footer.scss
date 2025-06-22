@@ -3,13 +3,6 @@
 @import 'colors';
 @import 'values';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-}
-
 #footer {
   background: palettes(gray);
   color: palettes(white);
@@ -31,10 +24,9 @@
     }
     .footer__column {
       .footer__title {
+        @include flex-center;
         border-bottom: solid $border-width palettes(white);
-        display: block;
         margin-bottom: 1rem;
-        text-align: center;
       }
       .footer__list {
         list-style: none;
@@ -53,16 +45,14 @@
           }
         }
         .footer__link {
-          color: inherit;
+          @include invisible-anchor;
           display: block;
-          text-decoration: none;
         }
       }
     }
   }
   #footer__copyright {
-    display: block;
+    @include flex-center;
     margin: 1rem;
-    text-align: center;
   }
 }
