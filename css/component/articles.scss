@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+@import '../mixin';
+
+.articles {
+  @include hw100;
+  &-wrapper {
+    @include hw100;
+    &__inner {
+      @include hw100;
+    }
+  }
+  &__heading {
+    border: solid 0.5rem palettes('aqua', dark);
+    border-bottom: 0;
+    border-top: 0;
+    margin: 1rem;
+    padding: 0 0.5rem;
+  }
+  &__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+  }
+  &__item {
+    border: solid 0.1rem palettes('gray', light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    &:hover {
+      box-shadow: 0 0 0.5rem palettes('gray');
+    }
+    &:hover &--title, &:hover &--description {
+      -webkit-box-orient: revert;
+      -webkit-line-clamp: revert;
+      display: revert;
+      line-clamp: revert;
+      overflow: revert;
+      text-overflow: revert;
+    }
+    &--link {
+      @include hw100;
+      color: inherit;
+      display: block;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    &--title, &--description {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+    &--title {
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+    }
+    &--description {
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+    }
+  }
+}

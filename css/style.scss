@@ -1,0 +1,25 @@
+@charset 'utf-8';
+
+@import 'mixin';
+@import 'component/header';
+@import 'component/breadcrumb';
+@import 'component/content';
+@import 'component/articles';
+@import 'component/footer';
+@import 'component/sidemenu';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include hw100;
+  font-size: clamp(10px, 2vw, 20px);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}

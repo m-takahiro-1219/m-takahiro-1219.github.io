@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+@import '../mixin';
+
+#content {
+  @include hw100;
+  &-wrapper {
+    @include hw100;
+    &__inner {
+      @include hw100;
+      margin: 0 auto;
+      max-width: 50rem;
+      width: 100%;
+    }
+  }
+}

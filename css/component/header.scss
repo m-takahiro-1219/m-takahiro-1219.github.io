@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+@import '../mixin';
+
+#header {
+  @include hw100;
+  &-wrapper {
+    @include hw100;
+    &__inner {
+      @include hw100;
+    }
+  }
+  &__heading {
+    @include hw100;
+    height: 5rem; // 仮
+  }
+}

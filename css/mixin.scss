@@ -1,0 +1,167 @@
+@charset 'utf-8';
+
+$border-width: 0.1rem;
+$breakpoints: (
+  'pc': 'screen and (min-width: 1000px)',
+  'sp': 'screen'
+);
+$colors: (
+  white-base    : rgb(255, 255, 255),
+  gray-base     : rgb(127, 127, 127),
+  black-base    : rgb(0, 0, 0),
+  red-base      : rgb(255, 0, 0),
+  orange-base   : rgb(255, 127, 0),
+  yellow-base   : rgb(255, 255, 0),
+  lime-base     : rgb(127, 255, 0),
+  green-base    : rgb(0, 255, 0),
+  mint-base     : rgb(0, 255, 127),
+  cyan-base     : rgb(0, 255, 255),
+  aqua-base     : rgb(0, 127, 255),
+  blue-base     : rgb(0, 0, 255),
+  purple-base   : rgb(127, 0, 255),
+  magenta-base  : rgb(255, 0, 255),
+  raspberry-base: rgb(255, 0, 127)
+);
+
+$color-palettes: ();
+
+@each $key, $value in $colors {
+  $name: str-slice($key, 1, str-index($key, '-base') - 1);
+  $palette: (
+    base: $value,
+    dark: darken($value, 10%),
+    light: lighten($value, 10%)
+  );
+  $color-palettes: map-merge($color-palettes, ($name: $palette));
+}
+
+@mixin article-wrapper ($category) {
+  width: 100%;
+  ##{$category}-article-list__heading {
+    border: solid 0.5rem palettes('aqua', dark);
+    border-bottom: 0;
+    border-top: 0;
+    margin: 1rem;
+    padding: 0 0.5rem;
+  }
+  ##{$category}-article-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+    .article-item {
+      border: solid 0.1rem palettes('gray', light);
+      border-radius: 0.5rem;
+      height: 10rem;
+      &:hover {
+        box-shadow: 0 0 0.5rem palettes('gray');
+      }
+      &:last-of-type {
+        @include flex-center;
+        &::after {
+          @include external-link;
+        }
+      }
+    }
+  }
+}
+
+@function palettes ($key, $tone: base) {
+  @return map-get(map-get($color-palettes, $key), $tone);
+}
+
+@mixin external-link {
+  background-image: url('img/icon__external-link--320px.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin hw100 {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin mediaquery ($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin sidemenu ($side) {
+  @include hw100;
+  $transition-duration: 0.5s;
+  position: fixed;
+  top: 0;
+  transform: translateX(if($side == 'left', -100%, 100%));
+  transition: transform $transition-duration ease-in-out;
+  z-index: 0;
+  #{$side}: 0;
+  @include mediaquery (pc) {
+    width: 50%;
+  }
+  ##{$side}-menu__state-toggle:not(:checked) + & {
+    transform: translateX(0) !important;
+    z-index: 1; // チェックが外れたときに前面に出すことで、反対のメニューバーの前面に表示される
+    ##{$side}-menu__open-button {
+      transform: translateX(if($side == 'left', -100%, 100%));
+    }
+  }
+  .sidemenu {
+    &-wrapper {
+      &__inner {
+        @include hw100;
+        background-color: palettes('white');
+        box-shadow: 0 0 0 $border-width palettes('gray', light) inset;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    &__open-button {
+      border: 0;
+      border-radius: 0.5rem;
+      bottom: 0;
+      height: 5rem;
+      margin: auto 0;
+      position: absolute;
+      top: 0; // 7.5rem + $border-width; // gapで生じる0.1remを相殺する
+      transition: transform $transition-duration ease-in-out;
+      width: 2rem;
+      z-index: 0;
+      #{$side}: 100%;
+    }
+    &__close-button {
+      height: 3rem;
+      width: 3rem;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+    &__container {
+      @include hw100;
+    }
+    &__list {
+      list-style: none;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      &--link {
+        color: inherit;
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
+}

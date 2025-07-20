@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
+  <head>
   <head prefix="og:http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="author" content="増野貴啓">
@@ -22,139 +23,125 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header id="header">
-      <h1 id="header__title"></h1>
-      <form id="search-form">
-        <input id="search-form__input" placeholder="キーワードを入力してください" type="search">
-        <input id="search-form__button" type="submit" value="検索">
-      </form>
-    </header>
-
-
-    <nav id="breadcrumbs" class="breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a href="/">ホーム</a></li>
-      </ul>
-    </nav>
-
-
-    <aside id="aside-left">
-      <ul>
-        <li></li>
-      </ul>
-    </aside>
-
-
-    <main id="main-content" class="article-section">
-      <h2 class="article-section__heading">最新の記事</h2>
-      <section class="article-section__list">
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事①</h3>
-            <p class="article-section__description">記事①の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事②</h3>
-            <p class="article-section__description">記事②の説明文 is very very very long wwwwwwwwwwwwwwwwww wwwwwwwww www www www www www www www www www www</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事③ is very very very long</h3>
-            <p class="article-section__description">記事③の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事④</h3>
-            <p class="article-section__description">記事④の説明文あああああああああああああああああああああああああああああああああああ</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事⑤</h3>
-            <p class="article-section__description">記事⑤の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">全て</h3>
-          </article>
-        </a>
-      </section>
-
-
-      <h2 class="article-section__heading">Topics</h2>
-      <section class="article-section__list">
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事①</h3>
-            <p class="article-section__description">記事①の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事②</h3>
-            <p class="article-section__description">記事②の説明文 is very very very long wwwwwwwwwwwwwwwwww wwwwwwwww www www www www www www www www www www</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事③ is very very very very very very long</h3>
-            <p class="article-section__description">記事③の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事④</h3>
-            <p class="article-section__description">記事④の説明文あああああああああああああああああああああああああああああああああああ</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">記事⑤</h3>
-            <p class="article-section__description">記事⑤の説明文</p>
-          </article>
-        </a>
-        <a class="article-section__link" href="" target="_new">
-          <article class="article-section__item">
-            <h3 class="article-section__title">全て</h3>
-          </article>
-        </a>
-      </section>
-    </main>
-
-
-    <aside id="aside-right">
-      <ul>
-        <li></li>
-      </ul>
-    </aside>
-
-
-    <footer id="footer">
-      <nav id="footer__navigation">
-        <div id="footer__column--category" class="footer__column">
-          <span class="footer__title">カテゴリー</span>
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href="https://x.com/M_T4K4H1R0" target="_new">X(旧Twitter)</a></li>
-            <li class="footer__item"><a class="footer__link" href="https://github.com/m-takahiro-1219" target="_new">Github</a></li>
-          </ul>
+    <div id="root-wrapper">
+      <header id="header">
+        <div id="header-wrapper">
+          <div id="header-wrapper__inner">
+            <h1 id="header__heading"></h1><!-- #header__heading -->
+          </div><!-- #header-wrapper__inner -->
+        </div><!-- #header-wrapper -->
+        <nav id="breadcrumb">
+          <div id="breadcrumb-wrapper">
+            <div id="breadcrumb-wrapper__inner">
+              <ul id="breadcrumb__list">
+                <li class="breadcrumb__item">
+                  <a class="breadcrumb__item--link" href="index.html">Home</a>
+                </li><!-- .breadcrumb__item -->
+                <li class="breadcrumb__item">
+                  <a class="breadcrumb__item--link" href="index.html">Home</a>
+                </li><!-- .breadcrumb__item -->
+                <li class="breadcrumb__item">
+                  <a class="breadcrumb__item--link" href="index.html">Home</a>
+                </li><!-- .breadcrumb__item -->
+              </ul><!-- #breadcrumb__list -->
+            </div><!-- #breadcrumb-wrapper__inner -->
+          </div><!-- #breadcrumb-wrapper -->
+        </nav><!-- #breadcrumb -->
+      </header>
+      <main id="content">
+        <div id="content-wrapper">
+          <div id="content-wrapper__inner">
+            <section class="articles">
+              <div class="articles-wrapper">
+                <div class="articles-wrapper__inner">
+                  <h2 class="articles__heading">おすすめの記事</h2>
+                  <div class="articles__list">
+                    <article class="articles__item">
+                      <a class="articles__item--link" href="">
+                        <h3 class="articles__item--title">タイトル</h3><!-- .articles__item--title -->
+                        <p class="articles__item--description">説明文</p><!-- .articles__item--description -->
+                      </a><!-- .articles__item--link -->
+                    </article><!-- .articles__item -->
+                    <article class="articles__item">
+                      <a class="articles__item--link" href="">
+                        <h3 class="articles__item--title">これはテスト用の長いタイトル</h3><!-- .articles__item--title -->
+                        <p class="articles__item--description">説明文</p><!-- .articles__item--description -->
+                      </a><!-- .articles__item--link -->
+                    </article><!-- .articles__item -->
+                    <article class="articles__item">
+                      <a class="articles__item--link" href="">
+                        <h3 class="articles__item--title">タイトル</h3><!-- .articles__item--title -->
+                        <p class="articles__item--description">これはテスト用の長い説明文これはテスト用の長い説明文これはテスト用の長い説明文</p><!-- .articles__item--description -->
+                      </a><!-- .articles__item--link -->
+                    </article><!-- .articles__item -->
+                  </div><!-- .articles__list -->
+                </div><!-- .articles-wrapper__inner -->
+              </div><!-- .articles-wrapper -->
+            </section><!-- .articles -->
+            <section class="articles">
+              <div class="articles-wrapper">
+                <div class="articles-wrapper__inner">
+                  <h2 class="articles__heading">おすすめの記事</h2>
+                  <div class="articles__list">
+                    <article class="articles__item">
+                      <a class="articles__item--link" href="">
+                        <h3 class="articles__item--title"></h3><!-- .articles__item--title -->
+                        <p class="articles__item--description"></p><!-- .articles__item--description -->
+                      </a><!-- .articles__item--link -->
+                    </article><!-- .articles__item -->
+                  </div><!-- .articles__list -->
+                </div><!-- .articles-wrapper__inner -->
+              </div><!-- .articles-wrapper -->
+            </section><!-- .articles -->
+          </div>
         </div>
-        <div id="footer__column--link" class="footer__column">
-          <span class="footer__title">リンク</span>
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href="https://x.com/M_T4K4H1R0" target="_new">X(旧Twitter)</a></li>
-            <li class="footer__item"><a class="footer__link" href="https://github.com/m-takahiro-1219" target="_new">Github</a></li>
-          </ul>
+      </main>
+      <footer id="footer">
+        <div id="footer-wrapper">
+          <div id="footer-wrapper__inner"></div>
         </div>
-      </nav>
-      <span id="footer__copyright"><small>&copy; 2025 増野貴啓</small></span>
-    </footer>
-
-
+      </footer>
+    </div>
+    <input id="left-menu__state-toggle" class="sidemenu__state-toggle" type="checkbox" checked>
+    <aside id="left-sidemenu" class="sidemenu-wrapper">
+      <button id="left-menu__open-button" class="sidemenu__open-button"></button>
+      <div class="sidemenu-wrapper__inner">
+        <h2>左側のメニューバー</h2>
+        <button id="left-menu__close-button" class="sidemenu__close-button"></button>
+        <menu id="left-menu" class="sidemenu__container">
+          <ul class="sidemenu__list">
+            <li class="sidemenu__item">
+              <a class="sidemenu__item--link">test</a>
+            </li>
+          </ul><!-- .side-menu__list -->
+          <ul class="sidemenu__list">
+            <li class="sidemenu__item">
+              <a class="sidemenu__item--link">test</a>
+            </li>
+          </ul><!-- .side-menu__list -->
+        </menu><!-- #left-menu__nav -->
+      </div><!-- #left-menu-wrapper__inner -->
+    </aside><!-- #left-menu-wrapper -->
+    <input id="right-menu__state-toggle" class="sidemenu__state-toggle" type="checkbox" checked>
+    <aside id="right-sidemenu" class="sidemenu-wrapper">
+      <button id="right-menu__open-button" class="sidemenu__open-button"></button>
+      <div class="sidemenu-wrapper__inner">
+        <h2>左側のメニューバー</h2>
+        <button id="right-menu__close-button" class="sidemenu__close-button"></button>
+        <menu id="right-menu" class="sidemenu__container">
+          <ul class="sidemenu__list">
+            <li class="sidemenu__item">
+              <a class="sidemenu__item--link">test</a>
+            </li>
+          </ul><!-- .side-menu__list -->
+          <ul class="sidemenu__list">
+            <li class="sidemenu__item">
+              <a class="sidemenu__item--link">test</a>
+            </li>
+          </ul><!-- .side-menu__list -->
+        </menu><!-- #left-menu__nav -->
+      </div><!-- #left-menu-wrapper__inner -->
+    </aside><!-- #left-menu-wrapper -->
     <script src="script.js"></script>
   </body>
 </html>

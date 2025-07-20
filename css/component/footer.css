@@ -1,0 +1,17 @@
+#footer {
+  height: 100%;
+  width: 100%;
+}
+#footer-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+  height: 10rem;
+  padding: 1rem;
+}
+#footer-wrapper__inner {
+  height: 100%;
+  width: 100%;
+  border: solid 0.2rem #999999;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=footer.css.map */
