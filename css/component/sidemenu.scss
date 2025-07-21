@@ -2,6 +2,10 @@
 
 @import '../mixin';
 
+#left-menu__state-toggle,
+#right-menu__state-toggle {
+  display: none;
+}
 #left-sidemenu {
   @include sidemenu(left);
 }

@@ -1,3 +1,8 @@
+#left-menu__state-toggle,
+#right-menu__state-toggle {
+  display: none;
+}
+
 #left-sidemenu {
   height: 100%;
   width: 100%;

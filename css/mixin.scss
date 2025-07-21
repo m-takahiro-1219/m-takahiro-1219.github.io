@@ -106,25 +106,33 @@ $color-palettes: ();
   transform: translateX(if($side == 'left', -100%, 100%));
   transition: transform $transition-duration ease-in-out;
   z-index: 0;
-  #{$side}: 0;
-  @include mediaquery (pc) {
-    width: 50%;
-  }
-  ##{$side}-menu__state-toggle:not(:checked) + & {
-    transform: translateX(0) !important;
-    z-index: 1; // チェックが外れたときに前面に出すことで、反対のメニューバーの前面に表示される
-    ##{$side}-menu__open-button {
-      transform: translateX(if($side == 'left', -100%, 100%));
+  &:has(.sidemenu__state-toggle:not(:checked)) {
+    transition: transform $transition-duration ease-in-out;
+    transform: translateX(0%);
+    // PC表示時には半分だけ移動させる
+    @include mediaquery (pc) {
+      transform: translateX(if($side == 'left', -50%, 50%));
+    }
+    z-index: 1;
+    .sidemenu {
+      &__open-button {
+        transform: translateX(if($side == 'left', -100%, 100%));
+      }
     }
   }
   .sidemenu {
     &-wrapper {
       &__inner {
         @include hw100;
+        // PC表示時には幅を半分にする
+        @include mediaquery (pc) {
+          width: 50%;
+        }
         background-color: palettes('white');
         box-shadow: 0 0 0 $border-width palettes('gray', light) inset;
-        position: relative;
-        z-index: 1;
+        position: absolute; top: 0;
+        // 左右逆寄せ(親要素の内側)にしておき、50%移動で調整できるようにしておく
+        #{if($side == 'left', right, left)}: 0;
       }
     }
     &__open-button {
@@ -134,10 +142,10 @@ $color-palettes: ();
       height: 5rem;
       margin: auto 0;
       position: absolute;
-      top: 0; // 7.5rem + $border-width; // gapで生じる0.1remを相殺する
+      top: 0;
+      transform: translateX(0%);
       transition: transform $transition-duration ease-in-out;
       width: 2rem;
-      z-index: 0;
       #{$side}: 100%;
     }
     &__close-button {
